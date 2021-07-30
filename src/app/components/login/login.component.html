@@ -1,0 +1,29 @@
+<div class= 'container'>
+    
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}}
+        </li>
+    </ul>
+
+    <div class='title'>
+        <fa-icon [icon]='faUser'></fa-icon>
+        Login
+    </div>
+    <form (ngSubmit)="onSubmit()">
+    <label for="">USERNAME</label>
+    <input type="text" name='username'  [(ngModel)]="username"> 
+    <label for="">PASSWORD</label>
+    <input type="password" name = 'password' [(ngModel)]="password">
+    <input type="checkbox" class='chb'>
+    <label for="" class='chbl'>Remember Me</label>
+    <div class='error'></div>
+    <div class='bottom'>
+        <button type='submit'>LOGIN</button>
+        <a routerLink="/register">Register</a>
+    </div>
+    </form>
+    
+</div>
+
+

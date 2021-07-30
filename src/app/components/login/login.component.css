@@ -1,0 +1,68 @@
+.container {
+    background-color: white;
+    display: block;
+    margin: auto;
+    width: 40%;
+    padding: 50px;
+    margin-top: 10%;
+}
+
+.title {
+    display: block;
+    margin: auto;
+    font-size: 28pt;
+}
+
+label {
+    display: block;
+    font-size: 10pt;
+    margin-top: 15px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+input:focus {
+    outline: 2px solid red;
+}
+
+.bottom {
+    border-top: 2px solid rgb(204, 201, 201);
+    padding-top: 20px;
+    margin-top: 15px;
+}
+
+.bottom button {
+    background-color: rgb(219, 218, 218);
+    width: 100px;
+    height: 40px;
+    font-size: 8pt;
+    border: 1px solid rgb(204, 201, 201);
+}
+
+.bottom button:hover{
+    background-color: rgb(204, 201, 201);
+}
+
+.bottom a {
+    float: right;
+    color: black;
+}
+
+.chb {
+    display: inline;
+    float: left;
+    width: 50px;
+}
+
+.chbl {
+    display: inline;
+    font-size: 13pt;
+}
+
+.error {
+    color: red;
+    font-size: 10pt;
+}
