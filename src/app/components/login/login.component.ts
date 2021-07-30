@@ -39,8 +39,14 @@ export class LoginComponent implements OnInit {
     un.innerHTML = '';
     return true;
   }
+
+
+
   onSubmit(){
-    this.valid();
+    user : User;
+    if(this.valid()){
+      this.usersService.getUserID('admin').subscribe(user => alert(user[0].username));
+    }
   }
 
 }
