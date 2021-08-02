@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(){
-    user : User;
     if(this.valid()){
       this.usersService.getUserID('admin').subscribe(user => alert(user[0].username));
     }
