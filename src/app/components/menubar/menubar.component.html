@@ -1,29 +1,30 @@
 <div class='main'>
 
-    <div class="dropdown">
+
+    <div class="dropdown" *ngIf='user.privilege==1'>
         <button class="dropbtn">
             <fa-icon [icon]='faBars'></fa-icon>
         </button>
         <div class="dropdown-content">
-          <a href="#">Log out</a>
+          <a href="#">Add new item</a>
         </div>
     </div>
 
     <div class='now'>
-        Now
+        {{ CurrentDate | date:'HH:mm'}}
     </div>
     
     <div class='date'>
-        Today
+        {{ CurrentDate | date:'dd/MM/yyyy' }}
     </div>
     
     <div class="dropdown user">
         <button class="dropbtn">
             <fa-icon [icon]='faUser'></fa-icon>
-            Name
+            {{user.username}}
         </button>
         <div class="dropdown-content">
-          <a href="#">Log out</a>
+          <a href="/login" (click)='logout()'>Log out</a>
         </div>
     </div>
 

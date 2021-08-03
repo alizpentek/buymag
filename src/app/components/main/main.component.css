@@ -26,8 +26,7 @@
 
 .containerm {
     display: flex;
-    align-items: stretch;
-    justify-content: space-around;
+ 
 }
 
 .middle {
@@ -93,6 +92,7 @@ table {
 .listView .details {
     border-right: 1px solid rgb(202, 202, 202);
     padding-right: 50px;
+    text-align: left;
 }
 
 .stoc {
@@ -107,7 +107,7 @@ table {
     marign-bottom: 30px;
 }
 
-.listView button {
+.listView button, .blockView button {
     background-color: rgb(4, 131, 182);
     color: white;
     width: 150px;
@@ -123,11 +123,12 @@ table {
 
 .cart {
     position: fixed;
-    width: 80px;
+    width: 100px;
     background-color: white;
     height: 50%;
     right: 10px;
     top: 30%;
+     overflow-y:scroll;
 }
 
 .blockView {
@@ -138,6 +139,7 @@ table {
     width: 80%;
     flex-direction: row;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .blockView .item {
@@ -146,4 +148,56 @@ table {
     min-height: 400px;
     margin-top: 30px;
   
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.listView .item {
+    flex-grow: 1;
+    
+}
+
+.listView .title{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.listView .t{
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.listView .t span{
+    font-weight: normal;
+}
+
+.cost{
+    padding-left: 50px;
+}
+
+.activeView {
+    background-color: #888888;
+}
+
+.act{
+    
+    color: rgb(4, 0, 255);
+}
+
+.cart img{
+    width: 70px;
+    height : 70px;
+}
+
+.close {
+    color: red;
+    float: right;
 }

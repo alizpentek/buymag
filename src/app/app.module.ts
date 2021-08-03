@@ -13,6 +13,10 @@ import { MenubarComponent } from './components/menubar/menubar.component';
 import { MainComponent } from './components/main/main.component';
 import { ProductsComponent } from './components/products/products.component';
 
+window.onbeforeunload = function() { 
+  if(localStorage.getItem('stayLoggedIn')!=='true')
+    localStorage.removeItem('user'); return ''; 
+};
 
 
 @NgModule({
@@ -35,4 +39,5 @@ import { ProductsComponent } from './components/products/products.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

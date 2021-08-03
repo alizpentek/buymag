@@ -2,20 +2,27 @@
     <div class='title'>
         Register
     </div>
+    
     <label for="">USERNAME</label>
-    <input type="text">
+    <input type="text" [(ngModel)]='username' (change)='changeUsername()'>
+    <span class='error'>{{err1}}</span>
     <label for="">EMAIL</label>
-    <input type="text">
+    <input type="email" (change)='changeEmail()' [(ngModel)]='email'> 
+    <span class='error'>{{err2}}</span>
     <label for="">PASSWORD</label>
-    <input type="password">
+    <input type="password" (change)='changePass1()' [(ngModel)]='pass1'>
+    <span class='error'>{{err3}}</span>
     <label for="">PASSWORD AGAIN</label>
-    <input type="password">
-    <input type="checkbox" class='chb'>
+    <input type="password" (change)='changePass2()' [(ngModel)]='pass2'>
+    <span class='error'>{{err4}}</span>
+    <br>
+    <input type="checkbox" class='chb' id='accept'>
     <label for="" class='chbl'>I am not a robot</label>
     <div class='bottom'>
         <button routerLink=''>BACK TO LOGIN</button>
-        <button class='right'>REGISTER</button>
+        <button class='right' (click)='onSubmit()'>REGISTER</button>
     </div>
+  
     
 </div>
 

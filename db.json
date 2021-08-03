@@ -1,18 +1,150 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "admin",
-            "privilege": 1
-        },
-        {
-            "id": 2,
-            "username": "user",
-            "password": "user",
-            "privilege": 2
-        }
-
-    ],
-    "products":[]
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "email": "admin@admin.com",
+      "privilege": 1
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "user",
+      "email": "user@user.com",
+      "privilege": 2
+    },
+    {
+      "id": 3,
+      "username": "aliz",
+      "email": "aliz@gmail.com",
+      "privilege": 2,
+      "password": "alizaliz"
+    },
+    {
+      "id": 4,
+      "username": "user2",
+      "email": "user2@gmail.com",
+      "privilege": 2,
+      "password": "user2user2"
+    },
+    {
+      "id": 5,
+      "username": "user3",
+      "email": "user3@gmail.com",
+      "privilege": 2,
+      "password": "user3user3"
+    }
+  ],
+  "Food": [
+    {
+      "name": "Chocolate Laptop Hp 15-db1200ny cu procesor AMD Ryzen",
+      "type": "FoodGroup.Food_Group_1",
+      "description": "You think it is a laptop but it tastes better... Chocolate Laptop",
+      "taste": "Great",
+      "weightInKg": 2,
+      "url": "https://lcdn.mediagalaxy.ro/resize/media/catalog/product/0/3/2bd48d28d1c32adea0e55139a4e6434a/03-FX706_2020.jpg",
+      "stock": 100,
+      "price": 100,
+      "reviews": {
+        "star": 4,
+        "reviewers": "['andra07', 'test']"
+      },
+      "order": 1
+    },
+    {
+      "name": "Cold Burger",
+      "type": "FoodGroup.Food_Group_1",
+      "description": "Cold is the way to eat it",
+      "taste": "Bitter",
+      "url": "https://www.ukcorporategifts.co.uk/assets/files/b9/milk-chocolate-laptop-keyboard-1-11165.jpg",
+      "weightInKg": 0.3,
+      "stock": 3,
+      "price": 1000,
+      "reviews": {
+        "star": 2,
+        "reviewers": "['andra07']"
+      },
+      "order": 2
+    },
+    {
+      "name": "Cold Burger2",
+      "type": "FoodGroup.Food_Group_1",
+      "description": "Cold is the way to eat it",
+      "taste": "Bitter",
+      "url": "https://www.ukcorporategifts.co.uk/assets/files/b9/milk-chocolate-laptop-keyboard-1-11165.jpg",
+      "weightInKg": 0.3,
+      "stock": 3,
+      "price": 1000,
+      "reviews": {
+        "star": 2,
+        "reviewers": "['andra07']"
+      },
+      "order": 3
+    }
+  ],
+  "Stuff": [
+    {
+      "name": "Hammer of Greed",
+      "url": "https://cdn.pixabay.com/photo/2018/08/01/14/04/gavel-3577254_960_720.jpg",
+      "description": "Gold Hammer to show your justice",
+      "weightInKg": 0.5,
+      "stock": 1,
+      "reviews": null,
+      "price": 80,
+      "order": 2
+    },
+    {
+      "name": "Iron 3-Bulk",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzuxIXW3SLLrx6Fv4Dtktb2U1KbJBh3Fu4Q&usqp=CAU",
+      "description": "3 kg of Iron",
+      "weightInKg": 3,
+      "stock": 1,
+      "reviews": null,
+      "price": 300,
+      "order": 1
+    },
+    {
+      "name": "Iron 3-Bulk",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzuxIXW3SLLrx6Fv4Dtktb2U1KbJBh3Fu4Q&usqp=CAU",
+      "description": "3 kg of Iron",
+      "weightInKg": 3,
+      "stock": 1,
+      "reviews": null,
+      "price": 300,
+      "order": 3
+    }
+  ],
+  "Order": [
+    {
+      "idUser": 2,
+      "idProduct": 1,
+      "typeProduct": "f",
+      "id": 1
+    },
+    {
+      "idUser": 2,
+      "idProduct": 1,
+      "typeProduct": "s",
+      "id": 2
+    },
+    {
+      "idUser": 2,
+      "idProduct": 2,
+      "typeProduct": "f",
+      "id": 3
+    },
+    {
+      "idUser": 2,
+      "idProduct": 1,
+      "typeProduct": "f",
+      "id": 4
+    },
+    {
+      "idUser": 2,
+      "idProduct": 2,
+      "typeProduct": "f",
+      "id": 5
+    }
+  ]
 }

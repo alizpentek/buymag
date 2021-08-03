@@ -4,23 +4,23 @@
 
 <div class='title'>
     <span>Food &Stuff </span>
-    <span>/ Food</span>
+    <span>/ {{products}}</span>
 </div>
 
 
 <div class='containerm'>
     <div class='left flexitem'>
         <div class='container'>
-            <h3>Food & Stuff</h3>
-            <h4>Food</h4>
-            <h4>Stuff</h4>
+            <h3 (click)='changeProduct("Food & Stuff")' class='fs'>Food & Stuff</h3>
+            <h4 (click)='changeProduct("Food")' class='f act'>Food</h4>
+            <h4 (click)='changeProduct("Stuff")' class='s'>Stuff</h4>
         </div>
     </div>
 
 
     <div class='flexitem middle'>
         <div class='filter'>
-            <span class='category'>Food</span>
+            <span class='category'>{{products}}</span>
             <div class='property'>
                 <table>
                     <tr>
@@ -50,96 +50,148 @@
 
             <div class='afisare'>
                 Tip afisare:
-                <fa-icon [icon]='faBars' class='afis'></fa-icon>
-                <fa-icon [icon]='faSquare' class='afis'></fa-icon>
+                <fa-icon [icon]='faBars' class='afis activeView' (click)='changeView()'></fa-icon>
+                <fa-icon [icon]='faSquare' class='afis' (click)='changeView()'></fa-icon>
             </div>
         </div>
 
 
+        <div *ngIf='products.includes("Food")'>
+        <div *ngIf='view=="list"'>
 
-        <div class='listView containerm'>
-            <div class= 'image'>
-                Picure here
+        <div class='listView containerm' *ngFor='let food of foods'>
+            <div class= 'image item'>
+                <img src={{food.url}} alt="">
             </div>
-            <div class='details'>
-                say something here
+            <div class='details item'>
+                <div class='title'>
+                    {{food.name}}
+                </div>
+                
+                <div class='t'>Name: <span>{{food.name}}</span></div>
+                <div class='t'>Type: <span>{{food.type}}</span></div>
+                <div class='t'>Taste: <span>{{food.taste}}</span></div>
+                <div class='t'>Description: <span>{{food.description}}</span></div>
+                <div class='t'>weight: <span>{{food.weightInKg}}</span></div>
+                <div class='t'>In store: <span>{{food.stock}} in stock</span></div>
             </div>
-            <div class='cost'>
-                <div class='stoc'>in stoc</div>
-                <div class='howMuch'>1999</div>
-                <button> <fa-icon [icon]='faCartPlus' class='icon'></fa-icon>Adauga in cos</button>
+            <div class='cost item'>
+                <div class='stoc'>
+                    <span *ngIf='food.stock<20'>
+                        last products
+                    </span>
+                    <span *ngIf='food.stock>=20'>
+                        in stock
+                    </span>
+                </div>
+                <div class='howMuch'>{{food.price}}</div>
+                <button (click)='addtoCart("f", food.order)'> <fa-icon [icon]='faCartPlus' class='icon' ></fa-icon>Adauga in cos</button>
+            </div>
+        </div>
+        </div>
+
+        <div class='blockView containerm' *ngIf='view!="list"'>
+            <div class='item' *ngFor='let food of foods'>
+                <div class='image'>
+                    <img src={{food.url}} alt="">
+                </div>
+                <div class='title'>
+                    {{food.name}}
+                </div>
+                <div class='stoc'>
+                    <span *ngIf='food.stock<20'>
+                        last products
+                    </span>
+                    <span *ngIf='food.stock>=20'>
+                        in stock
+                    </span>
+                </div>
+                <div class='howMuch'>
+                    {{food.price}}
+                </div>
+                <button (click)='addtoCart("f", food.order)'> <fa-icon [icon]='faCartPlus' class='icon' ></fa-icon>Adauga in cos</button>
             </div>
         </div>
 
 
-        <div class='blockView containerm'>
-            <div class='item'>
-                <div class='image'>
+    
 
-                </div>
-                <div class='title'>
-                    Laptop
-                </div>
-                <div class='stoc'>
-                    in stoc
-                </div>
-                <div class='howMuch'>
-                    1999
-                </div>
-            </div>
-
-
-            <div class='item'>
-                <div class='image'>
-
-                </div>
-                <div class='title'>
-                    Laptop
-                </div>
-                <div class='stoc'>
-                    in stoc
-                </div>
-                <div class='howMuch'>
-                    1999
-                </div>
-            </div>
-
-            <div class='item'>
-                <div class='image'>
-
-                </div>
-                <div class='title'>
-                    Laptop
-                </div>
-                <div class='stoc'>
-                    in stoc
-                </div>
-                <div class='howMuch'>
-                    1999
-                </div>
-            </div>
-
-            <div class='item'>
-                <div class='image'>
-
-                </div>
-                <div class='title'>
-                    Laptop
-                </div>
-                <div class='stoc'>
-                    in stoc
-                </div>
-                <div class='howMuch'>
-                    1999
-                </div>
-            </div>
-        </div>
     </div>
+
+
+    <div *ngIf='products.includes("Stuff")'>
+        <div *ngIf='view=="list"'>
+
+        <div class='listView containerm' *ngFor='let stuff of stuffs'>
+            <div class= 'image item'>
+                <img src={{stuff.url}} alt="">
+            </div>
+            <div class='details item'>
+                <div class='title'>
+                    {{stuff.name}}
+                </div>
+                
+                <div class='t'>Name: <span>{{stuff.name}}</span></div>
+                <div class='t'>Description: <span>{{stuff.description}}</span></div>
+                <div class='t'>weight: <span>{{stuff.weightInKg}}</span></div>
+                <div class='t'>In store: <span>{{stuff.stock}} in stock</span></div>
+            </div>
+            <div class='cost item'>
+                <div class='stoc'>
+                    <span *ngIf='stuff.stock<20'>
+                        last products
+                    </span>
+                    <span *ngIf='stuff.stock>=20'>
+                        in stock
+                    </span>
+                </div>
+                <div class='howMuch'>{{stuff.price}}</div>
+                <button (click)='addtoCart("s", stuff.order)'> <fa-icon [icon]='faCartPlus' class='icon' ></fa-icon>Adauga in cos</button>
+            </div>
+        </div>
+        </div>
+
+        <div class='blockView containerm' *ngIf='view=="block"'>
+            <div class='item' *ngFor='let stuff of stuffs'>
+                <div class='image'>
+                    <img src={{stuff.url}} alt="">
+                </div>
+                <div class='title'>
+                    {{stuff.name}}
+                </div>
+                <div class='stoc'>
+                    <span *ngIf='stuff.stock<20'>
+                        last products
+                    </span>
+                    <span *ngIf='stuff.stock>=20'>
+                        in stock
+                    </span>
+                </div>
+                <div class='howMuch'>
+                    {{stuff.price}}
+                </div>
+                <button (click)='addtoCart("s", stuff.order)'> <fa-icon [icon]='faCartPlus' class='icon' ></fa-icon>Adauga in cos</button>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <div class='right flexitem'>
         <div class='cart'>
-            
+            <div *ngFor='let order of orders'>
+                <div *ngIf='order.typeProduct=="f"'>
+                    <fa-icon [icon]='faWindowClose' class='close' (click)='deleteOrder(order.id)'></fa-icon>
+                    <img src={{foods[order.idProduct-1].url}} alt="">
+                    
+                    </div>
+                <div *ngIf='order.typeProduct=="s"'>
+                    <fa-icon [icon]='faWindowClose' class='close' (click)='deleteOrder(order.id)'></fa-icon>
+                    <img src={{stuffs[order.idProduct-1].url}} alt="">
+                </div>
+            </div>
+        
         </div>
     </div>
 </div>

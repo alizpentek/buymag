@@ -65,3 +65,8 @@ input:focus {
 .right {
     float: right;
 }
+
+.error {
+    color: red;
+    font-size: 8pt;
+}
